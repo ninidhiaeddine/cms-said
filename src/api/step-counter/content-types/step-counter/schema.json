@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "step_counters",
+  "info": {
+    "singularName": "step-counter",
+    "pluralName": "step-counters",
+    "displayName": "StepCounter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "steps": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

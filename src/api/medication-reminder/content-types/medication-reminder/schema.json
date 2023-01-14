@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medication_reminders",
+  "info": {
+    "singularName": "medication-reminder",
+    "pluralName": "medication-reminders",
+    "displayName": "MedicationReminder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medication": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::medication.medication"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "alreadyTaken": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
