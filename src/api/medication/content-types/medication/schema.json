@@ -12,10 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "medication_user": {
+    "user": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "admin::user"
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "medications"
     },
     "name": {
       "type": "string",
@@ -46,10 +47,6 @@
       "type": "date",
       "required": true
     },
-    "reminders": {
-      "type": "json",
-      "required": false
-    },
     "method": {
       "type": "enumeration",
       "enum": [
@@ -58,6 +55,12 @@
         "Halfway through a meal"
       ],
       "required": true
+    },
+    "medication_reminders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medication-reminder.medication-reminder",
+      "mappedBy": "medication"
     }
   }
 }

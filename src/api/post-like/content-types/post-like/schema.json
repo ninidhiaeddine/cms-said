@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "messages",
+  "collectionName": "post_likes",
   "info": {
-    "singularName": "message",
-    "pluralName": "messages",
-    "displayName": "Message",
+    "singularName": "post-like",
+    "pluralName": "post-likes",
+    "displayName": "PostLike",
     "description": ""
   },
   "options": {
@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "message": {
-      "type": "text",
-      "required": true,
-      "minLength": 5
-    },
-    "dateSent": {
-      "type": "datetime"
-    },
     "user": {
       "type": "relation",
       "relation": "oneToOne",

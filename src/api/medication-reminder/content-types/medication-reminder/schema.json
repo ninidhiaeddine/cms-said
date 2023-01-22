@@ -14,18 +14,23 @@
   "attributes": {
     "medication": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::medication.medication"
+      "relation": "manyToOne",
+      "target": "api::medication.medication",
+      "inversedBy": "medication_reminders"
     },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "admin::user"
+      "target": "plugin::users-permissions.user"
     },
     "alreadyTaken": {
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "dateTime": {
+      "type": "datetime",
+      "required": true
     }
   }
 }
